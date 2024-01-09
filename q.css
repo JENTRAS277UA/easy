@@ -1,0 +1,151 @@
+@property --x { syntax: "<number>"; inherits: false; initial-value: 0 }
+@property --y { syntax: "<number>"; inherits: false; initial-value: 0 }
+
+.hotcold{
+  width: 80vmin;
+  aspect-ratio: 3;
+  position: relative;
+  > i {
+    position: absolute;
+    --w: calc(100% / 21);
+    --h: calc(100% / 7);
+    width: var(--w);
+    height: var(--h);
+
+    --yd: calc(((var(--ty) - var(--y)) * var(--h)) / 100 * var(--val, 0));
+    --xd: calc(((var(--tx) - var(--x)) * var(--w)) / 100 * var(--val, 0));
+
+    top: calc(var(--y) * var(--h) + var(--yd));
+    left: calc(var(--x) * var(--w) + var(--xd));
+    background-color: var(--heat-color);
+		
+    &:nth-child(1)  { --y: 0; --x:  0; --ty: 0; --tx:  0 }
+    &:nth-child(2)  { --y: 0; --x:  1; --ty: 0; --tx:  0 }
+    &:nth-child(3)  { --y: 0; --x:  2; --ty: 3; --tx:  3 }
+    &:nth-child(4)  { --y: 0; --x:  6; --ty: 0; --tx:  4 }
+    &:nth-child(5)  { --y: 0; --x:  7; --ty: 0; --tx:  9 }
+    &:nth-child(6)  { --y: 0; --x:  8; --ty: 0; --tx:  8 }
+    &:nth-child(7)  { --y: 0; --x: 12; --ty: 0; --tx: 12 }
+    &:nth-child(8)  { --y: 0; --x: 18; --ty: 0; --tx: 10 }
+    &:nth-child(9)  { --y: 0; --x: 19; --ty: 0; --tx: 11 }
+
+    &:nth-child(10) { --y: 1; --x:  0; --ty: 1; --tx:  0 }
+    &:nth-child(11) { --y: 1; --x:  6; --ty: 1; --tx:  4 }
+    &:nth-child(12) { --y: 1; --x:  8; --ty: 1; --tx:  8 }
+    &:nth-child(13) { --y: 1; --x: 12; --ty: 1; --tx: 12 }
+    &:nth-child(14) { --y: 1; --x: 18; --ty: 0; --tx: 16 }
+    &:nth-child(15) { --y: 1; --x: 20; --ty: 0; --tx: 18 }
+
+    &:nth-child(16) { --y: 2; --x:  0; --ty: 2; --tx:  0 }
+    &:nth-child(17) { --y: 2; --x:  6; --ty: 2; --tx:  4 }
+    &:nth-child(18) { --y: 2; --x:  8; --ty: 2; --tx:  8 }
+    &:nth-child(19) { --y: 2; --x: 12; --ty: 2; --tx: 12 }
+    &:nth-child(20) { --y: 2; --x: 18; --ty: 0; --tx: 17 }
+    &:nth-child(21) { --y: 2; --x: 20; --ty: 0; --tx: 19 }
+
+    &:nth-child(22) { --y: 3; --x:  0; --ty: 3; --tx:  0 }
+    &:nth-child(23) { --y: 3; --x:  6; --ty: 3; --tx:  4 }
+    &:nth-child(24) { --y: 3; --x:  8; --ty: 3; --tx:  8 }
+    &:nth-child(25) { --y: 3; --x: 12; --ty: 3; --tx: 12 }
+    &:nth-child(26) { --y: 3; --x: 18; --ty: 1; --tx: 18 }
+    &:nth-child(27) { --y: 3; --x: 20; --ty: 0; --tx: 20 }
+
+    &:nth-child(28) { --y: 4; --x:  0; --ty: 4; --tx:  0 }
+    &:nth-child(29) { --y: 4; --x:  6; --ty: 4; --tx:  4 }
+    &:nth-child(30) { --y: 4; --x:  8; --ty: 4; --tx:  8 }
+    &:nth-child(31) { --y: 4; --x: 12; --ty: 4; --tx: 12 }
+    &:nth-child(32) { --y: 4; --x: 18; --ty: 2; --tx: 18 }
+    &:nth-child(33) { --y: 4; --x: 20; --ty: 4; --tx: 18 }
+
+    &:nth-child(34) { --y: 5; --x:  0; --ty: 5; --tx:  0 }
+    &:nth-child(35) { --y: 5; --x:  6; --ty: 5; --tx:  4 }
+    &:nth-child(36) { --y: 5; --x:  8; --ty: 5; --tx:  8 }
+    &:nth-child(37) { --y: 5; --x: 12; --ty: 5; --tx: 12 }
+    &:nth-child(38) { --y: 5; --x: 18; --ty: 3; --tx: 18 }
+    &:nth-child(39) { --y: 5; --x: 20; --ty: 5; --tx: 18 }
+
+    &:nth-child(40) { --y: 6; --x:  0; --ty: 6; --tx:  0 }
+    &:nth-child(41) { --y: 6; --x:  1; --ty: 3; --tx:  1 }
+    &:nth-child(42) { --y: 6; --x:  2; --ty: 3; --tx:  2 }
+    &:nth-child(43) { --y: 6; --x:  6; --ty: 6; --tx:  4 }
+    &:nth-child(44) { --y: 6; --x:  7; --ty: 6; --tx:  9 }
+    &:nth-child(45) { --y: 6; --x:  8; --ty: 6; --tx:  8 }
+    &:nth-child(46) { --y: 6; --x: 12; --ty: 6; --tx: 12 }
+    &:nth-child(47) { --y: 6; --x: 13; --ty: 6; --tx: 10 }
+    &:nth-child(48) { --y: 6; --x: 14; --ty: 6; --tx: 11 }
+    &:nth-child(49) { --y: 6; --x: 18; --ty: 6; --tx: 18 }
+    &:nth-child(50) { --y: 6; --x: 19; --ty: 6; --tx: 18 }
+  }
+
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  background-color: #1d1e22;
+  gap: 1rem;
+  font-size: 2rem;
+	--hue-min: 200;
+  --hue-max: 360;
+  --hue: calc(var(--hue-min) + (var(--hue-max) - var(--hue-min) / 100 * var(--val, 0)));
+  --heat-color: hsl(var(--hue) 100% 50%);
+  > div { display: flex; gap: 1rem }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  --track-height: 1rem;
+  --track-background: var(--heat-color);
+  --thumb-background: white;
+  --thumb-height: 1.5rem;
+  --thumb-width: 1.5rem;
+  --thumb-outline: 3px solid #ffffff;
+  --thumb-outline-offset: 0.125rem;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--track-background);
+  height: var(--track-height);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: calc((var(--track-height) - var(--thumb-height)) / 2);
+  background: var(--thumb-background);
+  height: var(--thumb-height);
+  width: var(--thumb-width);
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: var(--thumb-outline);
+  outline-offset: var(--thumb-outline-offset);
+}
+input[type="range"]::-moz-range-track {
+  background: var(--track-background);
+  height: var(--track-height);
+}
+input[type="range"]::-moz-range-thumb {
+  background-color: var(--thumb-background);
+  border: none;
+  height: var(--thumb-height);
+  width: var(--thumb-width);
+}
+input[type="range"]:focus::-moz-range-thumb{
+  outline: var(--thumb-outline);
+  outline-offset: var(--thumb-outline-offset);
+}
+
+/* just once for demo */
+i { animation: hotcold 3s linear forwards }
+@keyframes hotcold { 
+	10% 90% { top: calc(var(--y) * var(--h) + var(--yd)); left: calc(var(--x) * var(--w) + var(--xd)) }
+	40%, 60% { --x: var(--tx);  --y: var(--ty); background-color: red } 
+}
